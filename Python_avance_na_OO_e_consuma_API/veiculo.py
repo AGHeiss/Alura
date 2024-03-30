@@ -21,6 +21,18 @@ e inclua a informação sobre o tipo da moto.
 
 8 - Importe e Instancie Objetos: No arquivo main.py, importe as classes Carro e Moto. Em seguida, crie três instâncias de Carro e Moto com diferentes marcas, modelos, quantidade de portas e tipos.
 Exiba as Informações: Para cada instância, imprima no console as informações utilizando o método str.
+
+9 - Crie uma classe chamada Veiculo com um método abstrato chamado ligar.
+
+10 - No mesmo arquivo, crie um construtor para a classe Veiculo que aceita os parâmetros marca e modelo.
+
+11 - Crie uma nova classe chamada Carro que herda da classe Veiculo.
+
+12 - No construtor da classe Carro, utilize o método super() para chamar o construtor da classe pai e atribua o atributo específico cor à classe filha.
+
+13 - Em um arquivo chamado main.py, importe a classe Carro.
+
+14 - No arquivo main.py, instancie três objetos da classe Carro com diferentes características, como marca, modelo e cor.
 """
 
 class Veiculo:
@@ -31,6 +43,11 @@ class Veiculo:
 
     def __str__(self):
         return f"O veículo é do seguinte modelo: {self.modelo} e da marca {self.marca}. O veículo está {'ligado' if self._ligado else 'desligado'}."
+    
+    def ligar(self):
+        self._ligado = not self._ligado
+        print(f"O veículo foi {'ligado' if self._ligado else 'desligado'}")
+
     
 class Carro(Veiculo):
     def __init__(self, marca, modelo, ligado, portas):
