@@ -64,6 +64,7 @@ class Territorios:
         self.territorio_16 = territorio_16
         self.territorio_17 = territorio_17
         self.dias_sem_trabalhar = []
+        self.dias_trabalhados = []
 
     def designar_territorio(self, data_da_designacao, territorio_designado):
         self.data_da_designacao = datetime.datetime.strptime(data_da_designacao, "%d/%m/%Y").date()
@@ -127,91 +128,111 @@ class Territorios:
             for chave in self.territorio_01:
                 dia = self.dia_atual - chave
                 dias_01.append(dia)
+            self.dias_trabalhados.append(len(dias_01))               
             self.dias_sem_trabalhar.append(min(dias_01))
         if len(self.territorio_02) > 0:
             for chave in self.territorio_02:
                 dia = self.dia_atual - chave
                 dias_02.append(dia)
+            self.dias_trabalhados.append(len(dias_02))
             self.dias_sem_trabalhar.append(min(dias_02))
         if len(self.territorio_03) > 0:
             for chave in self.territorio_03:
                 dia = self.dia_atual - chave
                 dias_03.append(dia)
+            self.dias_trabalhados.append(len(dias_03))
             self.dias_sem_trabalhar.append(min(dias_03))
         if len(self.territorio_04) > 0:
             for chave in self.territorio_04:
                 dia = self.dia_atual - chave
                 dias_04.append(dia)
+            self.dias_trabalhados.append(len(dias_04))
             self.dias_sem_trabalhar.append(min(dias_04))
         if len(self.territorio_05) > 0:
             for chave in self.territorio_05:
                 dia = self.dia_atual - chave
                 dias_05.append(dia)
+            self.dias_trabalhados.append(len(dias_05))
             self.dias_sem_trabalhar.append(min(dias_05))
         if len(self.territorio_06) > 0:
             for chave in self.territorio_06:
                 dia = self.dia_atual - chave
                 dias_06.append(dia)
+            self.dias_trabalhados.append(len(dias_06))
             self.dias_sem_trabalhar.append(min(dias_06))
         if len(self.territorio_07) > 0:
             for chave in self.territorio_07:
                 dia = self.dia_atual - chave
                 dias_07.append(dia)
+            self.dias_trabalhados.append(len(dias_07))
             self.dias_sem_trabalhar.append(min(dias_07))
         if len(self.territorio_08) > 0:
             for chave in self.territorio_08:
                 dia = self.dia_atual - chave
                 dias_08.append(dia)
+            self.dias_trabalhados.append(len(dias_08))
             self.dias_sem_trabalhar.append(min(dias_08))
         if len(self.territorio_09) > 0:
             for chave in self.territorio_09:
                 dia = self.dia_atual - chave
                 dias_09.append(dia)
+            self.dias_trabalhados.append(len(dias_09))
             self.dias_sem_trabalhar.append(min(dias_09))
         if len(self.territorio_10) > 0:
             for chave in self.territorio_10:
                 dia = self.dia_atual - chave
                 dias_10.append(dia)
+            self.dias_trabalhados.append(len(dias_10))
             self.dias_sem_trabalhar.append(min(dias_10))
         if len(self.territorio_11) > 0:
             for chave in self.territorio_11:
                 dia = self.dia_atual - chave
                 dias_11.append(dia)
+            self.dias_trabalhados.append(len(dias_11))
             self.dias_sem_trabalhar.append(min(dias_11))
         if len(self.territorio_12) > 0:
             for chave in self.territorio_12:
                 dia = self.dia_atual - chave
                 dias_12.append(dia)
+            self.dias_trabalhados.append(len(dias_12))
             self.dias_sem_trabalhar.append(min(dias_12))
         if len(self.territorio_13) > 0:
             for chave in self.territorio_13:
                 dia = self.dia_atual - chave
                 dias_13.append(dia)
+            self.dias_trabalhados.append(len(dias_13))
             self.dias_sem_trabalhar.append(min(dias_13))
         if len(self.territorio_14) > 0:
             for chave in self.territorio_14:
                 dia = self.dia_atual - chave
                 dias_14.append(dia)
+            self.dias_trabalhados.append(len(dias_14))
             self.dias_sem_trabalhar.append(min(dias_14))
         if len(self.territorio_15) > 0:
             for chave in self.territorio_15:
                 dia = self.dia_atual - chave
                 dias_15.append(dia)
+            self.dias_trabalhados.append(len(dias_15))
             self.dias_sem_trabalhar.append(min(dias_15))
         if len(self.territorio_16) > 0:
             for chave in self.territorio_16:
                 dia = self.dia_atual - chave
                 dias_16.append(dia)
+            self.dias_trabalhados.append(len(dias_16))
             self.dias_sem_trabalhar.append(min(dias_16))
         if len(self.territorio_17) > 0:
             for chave in self.territorio_17:
                 dia = self.dia_atual - chave
                 dias_17.append(dia)
+            self.dias_trabalhados.append(len(dias_17))
             self.dias_sem_trabalhar.append(min(dias_17))
         contagem = 1
+        indice = 0
         for i in self.dias_sem_trabalhar:
-            print(f'Território {contagem}: {i} sem trabalhar')
+            print(f'Território {contagem}: {i} sem trabalhar, esse território foi trabalhado {self.dias_trabalhados[indice]} vezes'
+                  ' em todo o período registrado')
             contagem += 1
+            indice += 1
 
 
 
