@@ -72,7 +72,9 @@ df['Pontos_extras'] = df['Notas'] * 0.40
 df['Notas_finais'] = df['Notas'] + df['Pontos_extras']
 df['Aprovado_inicial'] = df['Notas'].apply(lambda x: True if x >= 6 else False)
 df['Aprovado_final'] = df['Notas_finais'].apply(lambda x: True if x >= 6 else False)
+print(df.query('Aprovado_inicial == False & Aprovado_final == True'))
 df['Reaprovados'] = (df['Aprovado_inicial'] == False) & (df['Aprovado_final'] == True)
+
 df.fillna(0, inplace=True)
 
 print(df)
